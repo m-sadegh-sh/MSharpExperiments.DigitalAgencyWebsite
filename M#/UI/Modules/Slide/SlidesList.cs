@@ -6,8 +6,6 @@ namespace Modules.Slide
     {
         public SlidesList()
         {
-            HeaderText("Slides");
-
             Search(GeneralSearch.AllFields)
                 .Label("Find:");
 
@@ -25,8 +23,6 @@ namespace Modules.Slide
             Column(x => x.LinkText);
 
             Column(x => x.DisplayOrder);
-
-            LoadJavascriptModule("/scripts/components/SlidesCarouselModule");
 
             ButtonColumn("Edit")
                 .HeaderText("Actions")

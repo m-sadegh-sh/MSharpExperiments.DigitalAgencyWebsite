@@ -13,7 +13,7 @@ namespace Pages
             BrowserTitle("Geeks Digital Agency");
 
             Add<Modules.Slide.SlidesCarouselList>();
-            //Add<Modules.Slide.FeatureLst>();
+            Add<Modules.Feature.FeaturesTopList>();
             //Add<Modules.Slide.About>();
             //Add<Modules.Slide.ClientLst>();
             //Add<Modules.Slide.TestimonyLst>();

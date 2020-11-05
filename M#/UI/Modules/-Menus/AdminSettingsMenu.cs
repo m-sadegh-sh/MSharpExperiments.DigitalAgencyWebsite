@@ -25,6 +25,9 @@ namespace Modules.Menus
 
             Item("Slides")
                 .OnClick(x => x.Go<Pages.Dashboard.Cms.SlidesPage>());
+
+            Item("Features")
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.FeaturesPage>());
         }
     }
 }
