@@ -13,8 +13,7 @@ namespace Modules.ContentBlock
                 .OnClick(x =>
                 {
                     x.Go<Pages.Dashboard.Cms.ContentBlocks.EnterPage>()
-                        .SendReturnUrl()
-                        .Send("item", "item.ID");
+                            .Send("item", "item.ID");
                 });
 
             Column(x => x.Content)
@@ -22,7 +21,7 @@ namespace Modules.ContentBlock
 
             Button("New Content Block")
                 .Icon(FA.Plus)
-                .OnClick(x => x.Go<Pages.Dashboard.Cms.ContentBlocks.EnterPage>().SendReturnUrl());
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.ContentBlocks.EnterPage>());
         }
     }
 }

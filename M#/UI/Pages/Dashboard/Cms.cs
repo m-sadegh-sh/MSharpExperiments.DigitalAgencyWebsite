@@ -6,9 +6,7 @@ namespace Pages.Dashboard
     {
         public CmsPage()
         {
-            Roles(AppRole.Admin);
-
-            Set(PageSettings.LeftMenu, "AdminSettingsMenu");
+            
         }
     }
 }

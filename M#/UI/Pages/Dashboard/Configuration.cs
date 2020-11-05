@@ -6,8 +6,6 @@ namespace Pages.Dashboard
     {
         public ConfigurationPage()
         {
-            Set(PageSettings.LeftMenu, "AdminSettingsMenu");
-
             OnStart(x => x.Go<Configuration.GeneralSettingsPage>().RunServerSide());
         }
     }

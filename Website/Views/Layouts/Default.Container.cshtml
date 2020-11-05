@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Start Favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/icons/fav/apple-touch-icon.png?v=@GeneralSettings.ResourceVersion">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/icons/fav/favicon-32x32.png?v=@GeneralSettings.ResourceVersion">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/icons/fav/favicon-16x16.png?v=@GeneralSettings.ResourceVersion">
+    <link rel="shortcut icon" href="~/icons/fav/favicon.ico?v=@GeneralSettings.ResourceVersion" />
+    <link rel="manifest" href="~/icons/fav/site.webmanifest?v=@GeneralSettings.ResourceVersion">
+    <link rel="mask-icon" href="~/icons/fav/safari-pinned-tab.svg?v=@GeneralSettings.ResourceVersion" color="#0c8282">
+    <meta name="apple-mobile-web-app-title" content="@ViewData["Title"]" />
+    <meta name="application-name" content="@ViewData["Title"]" />
+    <meta name="msapplication-TileColor" content="#0c8282">
+    <meta name="msapplication-config" content="~/icons/fav/browserconfig.xml?v=@GeneralSettings.ResourceVersion" />
+    <meta name="theme-color" content="#0c8282">
+
+    <!-- End Favicon -->
+    <!-- Start Open Graph -->
+
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:type" content="website" />
+    <!-- TODO: Replace the url with the website's root Url-->
+    <meta property="og:url" content="http://geeks.ltd.uk/" />
+    <!--
+        TODO: Create an image for the client's logo w:1200px h:1200px use fully qualified url address
+        like https://geeks.ltd.uk/images/logo.png
+    -->
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+
+    <!-- End Open Graph-->
+
+    <link href="~/styles/default/styles.css?v=@GeneralSettings.ResourceVersion" rel="stylesheet" />
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

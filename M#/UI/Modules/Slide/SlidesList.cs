@@ -7,7 +7,7 @@ namespace Modules.Slide
         public SlidesList()
         {
             HeaderText("Slides");
-            
+
             Search(GeneralSearch.AllFields)
                 .Label("Find:");
 
@@ -25,16 +25,18 @@ namespace Modules.Slide
             Column(x => x.LinkText);
 
             Column(x => x.DisplayOrder);
-            
+
+            LoadJavascriptModule("/scripts/components/SlidesCarouselModule");
+
             ButtonColumn("Edit")
                 .HeaderText("Actions")
                 .GridColumnCssClass("actions")
                 .Icon(FA.Edit)
-                /*M#:w[32]T-Prop:SendReturnUrl-Type:NavigateActivity-The destination page uses ReturnUrl which is not provided.*/.OnClick(x => x.Go<Pages.Dashboard.Cms.ContentBlocks.EnterPage>().Send("item", "item.ID"));
-            
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.Slides.EnterPage>().Send("item", "item.ID"));
+
             Button("New Slide")
                 .Icon(FA.Plus)
-                /*M#:w[36]T-Prop:SendReturnUrl-Type:NavigateActivity-The destination page uses ReturnUrl which is not provided.*/.OnClick(x => x.Go<Pages.Dashboard.Cms.ContentBlocks.EnterPage>());
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.Slides.EnterPage>());
         }
     }
 }

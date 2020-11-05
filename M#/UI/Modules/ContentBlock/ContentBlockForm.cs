@@ -13,7 +13,7 @@ namespace Modules.ContentBlock
                 .AsHtmlEditor();
 
             Button("Cancel")
-                .OnClick(x => x.ReturnToPreviousPage());
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.ContentBlocksPage>());
 
             Button("Save")
                 .IsDefault()
@@ -21,7 +21,7 @@ namespace Modules.ContentBlock
                 .OnClick(x =>
                 {
                     x.SaveInDatabase();
-                    x.ReturnToPreviousPage();
+                    x.Go<Pages.Dashboard.Cms.ContentBlocksPage>();
                 });
         }
     }

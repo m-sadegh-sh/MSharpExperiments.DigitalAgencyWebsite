@@ -47,6 +47,12 @@ namespace Domain
                 Key = nameof(ContentBlock.PasswordSuccessfullyReset),
                 Content = "Your password has been successfully reset."
             });
+
+            await Create(new ContentBlock
+            {
+                Key = nameof(ContentBlock.DashboardGreeting),
+                Content = "<p>Welcome to your dashboard.<br/>You can manage your website with ease, just take a look at left side menu.</p>"
+            });
         }
 
         async Task CreateClients()

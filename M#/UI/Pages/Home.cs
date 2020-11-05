@@ -10,9 +10,9 @@ namespace Pages
 
             Layout(Layouts.Default);
 
-            BrowserTitle("Mohammad's Digital Agency");
+            BrowserTitle("Geeks Digital Agency");
 
-            Add<Modules.Slide.SlidesList>();
+            Add<Modules.Slide.SlidesCarouselList>();
             //Add<Modules.Slide.FeatureLst>();
             //Add<Modules.Slide.About>();
             //Add<Modules.Slide.ClientLst>();

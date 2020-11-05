@@ -8,7 +8,11 @@ namespace Cms
         {
             // Schema("Cms");
 
-            InstanceAccessors("PasswordSuccessfullyReset", "LoginIntro");
+            InstanceAccessors(
+                "PasswordSuccessfullyReset",
+                "LoginIntro",
+                "DashboardGreeting"
+            );
 
             DefaultToString = String("Key")
                 .Mandatory()
