@@ -6,13 +6,13 @@ namespace Modules.Menus
     {
         public AdminSettingsMenu()
         {
-            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse);
-            WrapInForm(false);
-            AjaxRedirect();
-            IsViewComponent();
-            RootCssClass("sidebar-menu");
-            UlCssClass("nav flex-column");
-            Using("Olive.Security");
+            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse)
+                .WrapInForm(false)
+                .AjaxRedirect()
+                .IsViewComponent()
+                .RootCssClass("sidebar-menu")
+                .UlCssClass("nav flex-column")
+                .Using("Olive.Security");
 
             Item("General settings")
                 .OnClick(x => x.Go<Pages.Dashboard.Configuration.GeneralSettingsPage>());

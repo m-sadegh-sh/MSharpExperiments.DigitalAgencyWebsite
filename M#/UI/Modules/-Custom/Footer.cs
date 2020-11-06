@@ -12,20 +12,20 @@ namespace Modules.Custom
 
         public Footer()
         {
-            IsInUse().IsViewComponent()
+            IsInUse()
+                .IsViewComponent()
                 .Using("Olive.Security")
                 .RootCssClass("website-footer")
                 .Markup(@"
-           <div>
-               [#BUTTONS(Email)#]
-               [#BUTTONS(LinkedIn)#]
-               [#BUTTONS(Facebook)#]
-               [#BUTTONS(Twitter)#] <br/>
-               [#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#]
-                &copy; @LocalTime.Now.Year. All rights reserved.
-            </div>");
-
-
+                    <div>
+                        [#BUTTONS(Email)#]
+                        [#BUTTONS(LinkedIn)#]
+                        [#BUTTONS(Facebook)#]
+                        [#BUTTONS(Twitter)#] <br/>
+                        [#BUTTONS(SoftwareDevelopment)#] by [#BUTTONS(Geeks)#]
+                        &copy; @LocalTime.Now.Year. All rights reserved.
+                     </div>
+                ");
 
             Link("Geeks")
                 .OnClick(x => x.Go(DEVELOPER, OpenIn.NewBrowserWindow));

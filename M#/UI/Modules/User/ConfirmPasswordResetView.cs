@@ -6,8 +6,6 @@ namespace Modules.User
     {
         public ConfirmPasswordResetView()
         {
-            HeaderText("@item Details");
-
             Markup("@ContentBlock.PasswordSuccessfullyReset.Content");
 
             Link("Proceed to the login page.")

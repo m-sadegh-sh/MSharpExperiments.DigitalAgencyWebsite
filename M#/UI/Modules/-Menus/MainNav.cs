@@ -2,37 +2,28 @@
 
 namespace Modules.Menus
 {
-    class MainNav : MenuModule
+    public class MainNav : MenuModule
     {
         public MainNav()
         {
-            WrapInForm(false);
-            IsViewComponent();
+            WrapInForm(false)
+                .IsViewComponent();
 
-            Item("Home").LinkCssClass("mark").OnClick(x =>
-            {
-                x.Go("#SlideLst");
-            });
+            Item("Home")
+                .LinkCssClass("mark")
+                .OnClick(x => x.Go("#SlideLst"));
 
-            Item("Features").OnClick(x =>
-            {
-                x.Go("#FeatureLst");
-            });
+            Item("Features")
+                .OnClick(x => x.Go("#FeatureLst"));
 
-            Item("About").OnClick(x =>
-            {
-                x.Go("#About");
-            });
+            Item("About")
+                .OnClick(x => x.Go("#About"));
 
-            Item("Clients").OnClick(x =>
-            {
-                x.Go("#ClientLst");
-            });
+            Item("Clients")
+                .OnClick(x => x.Go("#ClientLst"));
 
-            Item("Contact").OnClick(x =>
-            {
-                x.Go("#Contact");
-            });
+            Item("Contact")
+                .OnClick(x => x.Go("#Contact"));
         }
     }
 }

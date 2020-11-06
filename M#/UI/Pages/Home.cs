@@ -6,16 +6,14 @@ namespace Pages
     {
         public HomePage()
         {
-            Route("/");
-
-            Layout(Layouts.Default);
-
-            BrowserTitle("Geeks Digital Agency");
+            Route("/")
+                .Layout(Layouts.Default)
+                .BrowserTitle("Geeks Digital Agency");
 
             Add<Modules.Slide.SlidesCarouselList>();
             Add<Modules.Feature.FeaturesTopList>();
+            Add<Modules.Client.ClientsCarouselList>();
             //Add<Modules.Slide.About>();
-            //Add<Modules.Slide.ClientLst>();
             //Add<Modules.Slide.TestimonyLst>();
             //Add<Modules.Slide.Contact>();
 

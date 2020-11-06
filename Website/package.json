@@ -31,8 +31,5 @@
   },
   "engines": {
     "yarn": ">= 1.0.0"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2"
   }
 }

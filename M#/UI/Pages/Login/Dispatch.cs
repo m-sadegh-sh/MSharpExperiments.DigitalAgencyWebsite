@@ -8,7 +8,10 @@ namespace Pages.Login
         {
             OnStart(x =>
             {
-                x.If(AppRole.Admin).Go<DashboardPage>().RunServerSide();
+                x.If(AppRole.Admin)
+                 .Go<DashboardPage>()
+                 .RunServerSide();
+
                 x.GentleMessage("TODO: Add redirect logic here and then delete this activity!");
             });
         }

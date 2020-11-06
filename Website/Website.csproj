@@ -21,6 +21,9 @@
     <None Remove="App_Data\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\scripts\components\ClientsCarouselModule.ts" />
+  </ItemGroup>
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\styles\FrontEnd-Modal.css" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +58,7 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\scripts\components\ClientsCarouselModule.ts" />
     <TypeScriptCompile Include="wwwroot\scripts\components\SlidesCarouselModule.ts" />
   </ItemGroup>
   <ItemGroup>

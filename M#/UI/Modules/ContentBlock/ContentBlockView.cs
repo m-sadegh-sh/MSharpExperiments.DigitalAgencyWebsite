@@ -8,9 +8,8 @@ namespace Modules.ContentBlock
         {
             IsViewComponent()
                 .DataSource("await ContentBlock.FindByKey(info.Key)")
-                .Markup("@info.Output.Raw()");
-
-            //================ Code Extensions: ================
+                .Markup("@info.Output.Raw()")
+                .WrapInForm(false);
 
             ViewModelProperty<string>("Key");
 

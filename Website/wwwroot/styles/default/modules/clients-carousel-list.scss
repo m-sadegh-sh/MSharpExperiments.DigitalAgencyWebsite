@@ -1,0 +1,144 @@
+﻿$carousel-item-width: 100vw;
+$carousel-item-height: 80vw;
+$carousel-overlay-width: 25vw;
+$carousel-overlay-min-width: 300px;
+$carousel-overlay-background-color: rgba(#000, 0.35);
+
+:root {
+    --carousel-item-width: $carousel-item-width;
+}
+
+[data-module="ClientsCarouselList"] {
+    position: relative;
+    overflow: hidden;
+    height: $carousel-item-height;
+    max-height: 640px;
+
+    .list-items {
+        position: absolute;
+        height: 100%;
+        transition: left 0.3s ease-in-out;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+
+        .item {
+            width: $carousel-item-width;
+            flex-shrink: 0;
+
+            .item-inner {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                .overlay-container {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 100%;
+                    width: $carousel-overlay-width;
+                    min-width: $carousel-overlay-min-width;
+                    background-color: $carousel-overlay-background-color;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    .content-wrapper {
+                        flex-grow: 1;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .content {
+                            text-align: center;
+                            color: #fff;
+
+                            h1 {
+                                margin: 0;
+                                font-weight: normal;
+                            }
+
+                            p {
+                                margin: 1rem 0 0;
+                                font-size: 1.5em;
+                                line-height: 1.25em;
+                            }
+                        }
+
+                        .link {
+                            margin-top: 2rem;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-size: 1.25em;
+                            padding: 0.25rem 0.5rem;
+                            border-bottom: dotted 2px rgba(#fff, 0.5);
+                            transition: background-color 0.3s ease-in-out;
+
+                            &:hover {
+                                background-color: rgba(#fff, 0.25);
+                            }
+                        }
+                    }
+                }
+
+                &.current {
+                }
+            }
+        }
+    }
+
+    .paging-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: $carousel-overlay-width;
+        min-width: $carousel-overlay-min-width;
+
+        ul {
+            margin: 2rem 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+
+            li {
+                list-style: none;
+                width: 0.75rem;
+                height: 0.75rem;
+                border-radius: 1rem;
+                background-color: rgba(#fff, 0.5);
+                transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+                & + li {
+                    margin-left: 0.5rem;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:hover,
+                &.current {
+                    background-color: rgba(#fff, 0.75);
+                }
+
+                &.current {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+
+    .empty-list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $carousel-overlay-background-color;
+        color: #fff;
+        font-size: 1.5em;
+    }
+}

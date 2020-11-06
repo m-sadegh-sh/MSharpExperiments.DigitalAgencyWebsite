@@ -6,11 +6,12 @@ namespace Modules.Menus
     {
         public MainMenu()
         {
-            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse);
-            AjaxRedirect().WrapInForm(false);
-            Using("Olive.Security");
-            IsViewComponent().UlCssClass("nav flex-column");
-            RootCssClass("sidebar-menu");
+            SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse)
+                .AjaxRedirect().WrapInForm(false)
+                .Using("Olive.Security")
+                .IsViewComponent()
+                .UlCssClass("nav flex-column")
+                .RootCssClass("sidebar-menu");
 
             Link("Logout")
                  .CssClass("align-bottom logout")

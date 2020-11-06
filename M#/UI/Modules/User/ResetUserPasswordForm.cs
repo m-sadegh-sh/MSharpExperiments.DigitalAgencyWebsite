@@ -13,19 +13,26 @@ namespace Modules.User
                 .DataSource("info.Ticket.User")
                 .SecurityChecks("Request.Has(\"Ticket\")");
 
-            Field(x => x.Password).Mandatory().AfterControl("<div class='password-strength'></div>");
-            CustomField().Label("Confirm new password")
+            Field(x => x.Password)
+                .Mandatory()
+                .AfterControl("<div class='password-strength'></div>");
+
+            CustomField()
+                .Label("Confirm new password")
                 .Mandatory()
                 .PropertyName("ConfirmPassword")
                 .ExtraControlAttributes("type=\"password\"")
                 .ViewModelAttributes("[System.ComponentModel.DataAnnotations.Compare(\"Password\",ErrorMessage=\"New password and Confirm password do not match. Please try again.\")]")
                 .Control(ControlType.Textbox);
 
-            ViewModelProperty<PasswordResetTicket>("Ticket").FromRequestParam("ticket");
+            ViewModelProperty<PasswordResetTicket>("Ticket")
+                .FromRequestParam("ticket");
 
-            Button("Cancel").OnClick(x => x.Go<Pages.LoginPage>());
+            Button("Cancel")
+                .OnClick(x => x.Go<Pages.LoginPage>());
 
-            Button("Reset").IsDefault()
+            Button("Reset")
+                .IsDefault()
                 .OnClick(x =>
                 {
                     x.If("info.Ticket.IsExpired || info.Ticket.IsUsed")
