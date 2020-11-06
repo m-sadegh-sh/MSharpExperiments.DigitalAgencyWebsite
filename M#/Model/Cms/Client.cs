@@ -13,7 +13,8 @@ namespace Cms
 
             OpenImage("Image")
                 .Mandatory()
-                .AutoOptimize(true);
+                .AutoOptimize(true)
+                .PreserveTransparency(true);
         }
     }
 }

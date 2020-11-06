@@ -7,11 +7,15 @@ namespace Modules.Menus
         public MainMenu()
         {
             SubItemBehaviour(MenuSubItemBehaviour.ExpandCollapse)
-                .AjaxRedirect().WrapInForm(false)
+                .AjaxRedirect()
+                .WrapInForm(false)
                 .Using("Olive.Security")
                 .IsViewComponent()
                 .UlCssClass("nav flex-column")
                 .RootCssClass("sidebar-menu");
+
+            Link("Open live website")
+                 .OnClick(x => x.Go<Pages.HomePage>().Target(OpenIn.NewBrowserWindow));
 
             Link("Logout")
                  .CssClass("align-bottom logout")
@@ -20,7 +24,7 @@ namespace Modules.Menus
                  .OnClick(x =>
                  {
                      x.CSharp("await OAuth.Instance.LogOff();");
-                     x.Go<Pages.LoginPage>();
+                     x.Go<Pages.HomePage>();
                  });
         }
     }

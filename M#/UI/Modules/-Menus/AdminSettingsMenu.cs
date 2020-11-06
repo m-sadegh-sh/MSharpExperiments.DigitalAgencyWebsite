@@ -28,6 +28,9 @@ namespace Modules.Menus
 
             Item("Features")
                 .OnClick(x => x.Go<Pages.Dashboard.Cms.FeaturesPage>());
+
+            Item("Clients")
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.ClientsPage>());
         }
     }
 }

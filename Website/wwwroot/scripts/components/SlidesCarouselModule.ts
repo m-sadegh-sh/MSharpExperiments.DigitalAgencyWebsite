@@ -1,12 +1,7 @@
-﻿//import AppPage from "../AppPage"
-
-export default class SlidesCarouselModule {
-
-    //static get page(): AppPage { return window["page"]; }
-
+﻿export default class SlidesCarouselModule {
     public static run = () => ($ => {
         const bodyStyles = window.getComputedStyle(document.body);
-        const carouselItemWidth = bodyStyles.getPropertyValue('--carousel-item-width');
+        const carouselItemWidth = bodyStyles.getPropertyValue('--slides-carousel-item-width');
 
         const $carouselModule = $('[data-module="SlidesCarouselList"]');
         const $carouselItemsWrapper = $carouselModule.find('.list-items');

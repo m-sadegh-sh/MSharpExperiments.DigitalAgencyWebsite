@@ -1,6 +1,13 @@
 ﻿@import "reset.scss";
-@import "fonts.scss";
 @import "variables.scss";
+
+@import "../../lib/@fortawesome/fontawesome-free/scss/variables";
+@import "../../lib/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../lib/@fortawesome/fontawesome-free/scss/brands";
+@import "../../lib/@fortawesome/fontawesome-free/scss/solid";
+
+@import "fonts.scss";
 @import "header.scss";
 @import "modules/slides-carousel-list.scss";
 @import "modules/features-top-list.scss";
+@import "modules/clients-carousel-list.scss";

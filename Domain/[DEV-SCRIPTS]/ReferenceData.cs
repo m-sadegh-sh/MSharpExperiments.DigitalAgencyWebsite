@@ -80,6 +80,60 @@ namespace Domain
                 Name = "Etsy",
                 Image = new Blob("~/Mocks/iconfinder_117_Etsy_logo_logos_4373171.png")
             });
+
+            await Create(new Client
+            {
+                Name = "Envira",
+                Image = new Blob("~/Mocks/iconfinder_113_Envira_logo_logos_4373175.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Github",
+                Image = new Blob("~/Mocks/iconfinder_142_Github_logo_logos_4373152.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Gratipay",
+                Image = new Blob("~/Mocks/iconfinder_155_Gratipay_logo_logos_4373144.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Master Card",
+                Image = new Blob("~/Mocks/iconfinder_206_Mastercard_Credit_Card_logo_logos_4373111.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Megaport",
+                Image = new Blob("~/Mocks/iconfinder_214_Megaport_logo_logos_4373119.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Codepen",
+                Image = new Blob("~/Mocks/iconfinder_59_Codepen_logo_logos_4373253.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Coderwall",
+                Image = new Blob("~/Mocks/iconfinder_60_Coderwall_logo_logos_4373252.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "Decred",
+                Image = new Blob("~/Mocks/iconfinder_80_Decred_logo_logos_4373247.png")
+            });
+
+            await Create(new Client
+            {
+                Name = "DHL",
+                Image = new Blob("~/Mocks/iconfinder_86_Dhl_logo_logos_4373241.png")
+            });
         }
 
         async Task CreateFeatures()

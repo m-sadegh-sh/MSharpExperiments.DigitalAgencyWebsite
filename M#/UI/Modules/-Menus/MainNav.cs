@@ -24,6 +24,14 @@ namespace Modules.Menus
 
             Item("Contact")
                 .OnClick(x => x.Go("#Contact"));
+
+            Item("Login")
+                .VisibleIf(CommonCriterion.IsUserGuest_notLogged_in)
+                .OnClick(x => x.Go<Pages.LoginPage>());
+
+            Item("Dashboard")
+                .VisibleIf(CommonCriterion.IsUserLoggedIn)
+                .OnClick(x => x.Go<Pages.DashboardPage>());
         }
     }
 }

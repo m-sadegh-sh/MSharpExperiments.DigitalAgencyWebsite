@@ -1,132 +1,117 @@
-﻿$carousel-item-width: 100vw;
-$carousel-item-height: 80vw;
-$carousel-overlay-width: 25vw;
-$carousel-overlay-min-width: 300px;
-$carousel-overlay-background-color: rgba(#000, 0.35);
-
-:root {
-    --carousel-item-width: $carousel-item-width;
-}
+﻿$clients-carousel-background-color: darken(#fff, 10%);
+$clients-carousel-item-width: 10rem;
+$clients-carousel-item-height: 10rem;
 
 [data-module="ClientsCarouselList"] {
     position: relative;
     overflow: hidden;
-    height: $carousel-item-height;
-    max-height: 640px;
+    height: $clients-carousel-item-height;
+    background-color: $clients-carousel-background-color;
 
     .list-items {
-        position: absolute;
-        height: 100%;
-        transition: left 0.3s ease-in-out;
-        left: 0;
         display: flex;
         flex-direction: row;
+        padding: 0 4rem;
 
         .item {
-            width: $carousel-item-width;
+            width: $clients-carousel-item-width;
+            height: $clients-carousel-item-height;
             flex-shrink: 0;
+            padding: 2rem 0;
 
-            .item-inner {
+            &.hiding,
+            &.hided {
+                opacity: 0;
+            }
+
+            &.hided.showing {
+                opacity: 1;
+            }
+
+            .image {
                 width: 100%;
                 height: 100%;
                 position: relative;
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-position: center;
+                background-size: contain;
+            }
+        }
 
-                .overlay-container {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    height: 100%;
-                    width: $carousel-overlay-width;
-                    min-width: $carousel-overlay-min-width;
-                    background-color: $carousel-overlay-background-color;
-                    padding: 2rem;
-                    display: flex;
-                    flex-direction: column;
+        &.backward {
+            .item {
+                margin-left: calc(#{$clients-carousel-item-width} * -1);
+                transition: margin-left 0.6s ease-in-out, opacity 0.3s ease-in-out;
 
-                    .content-wrapper {
-                        flex-grow: 1;
-                        display: flex;
-                        justify-content: center;
-                        flex-direction: column;
-                        align-items: center;
-
-                        .content {
-                            text-align: center;
-                            color: #fff;
-
-                            h1 {
-                                margin: 0;
-                                font-weight: normal;
-                            }
-
-                            p {
-                                margin: 1rem 0 0;
-                                font-size: 1.5em;
-                                line-height: 1.25em;
-                            }
-                        }
-
-                        .link {
-                            margin-top: 2rem;
-                            color: #fff;
-                            text-transform: uppercase;
-                            font-size: 1.25em;
-                            padding: 0.25rem 0.5rem;
-                            border-bottom: dotted 2px rgba(#fff, 0.5);
-                            transition: background-color 0.3s ease-in-out;
-
-                            &:hover {
-                                background-color: rgba(#fff, 0.25);
-                            }
-                        }
-                    }
+                &.hiding {
+                    margin-left: 0;
                 }
 
-                &.current {
+                &.hided {
+                    margin-left: 0;
+
+                    &.showing {
+                        margin-left: $clients-carousel-item-width;
+                    }
+                }
+            }
+        }
+
+        &.forward {
+            .item {
+                transition: margin-left 0.6s ease-in-out, opacity 0.3s ease-in-out;
+
+                &.hiding {
+                    margin-left: calc(#{$clients-carousel-item-width} * -1);
+                }
+
+                &.hided {
+                    margin-left: $clients-carousel-item-width;
+
+                    &.showing {
+                        margin-left: 0;
+                    }
                 }
             }
         }
     }
 
-    .paging-indicators {
+    .paging-icons {
         position: absolute;
+        top: 0;
         right: 0;
-        bottom: 0;
-        width: $carousel-overlay-width;
-        min-width: $carousel-overlay-min-width;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(90deg, $clients-carousel-background-color 0%, transparent 15%, transparent 85%, $clients-carousel-background-color 100%);
 
-        ul {
-            margin: 2rem 0;
+        button {
+            width: 4rem;
+            height: 4rem;
+            transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            border: none;
+            background-color: rgba(#fff, 0.75);
+            outline: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
 
-            li {
-                list-style: none;
-                width: 0.75rem;
-                height: 0.75rem;
-                border-radius: 1rem;
-                background-color: rgba(#fff, 0.5);
-                transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+            &.prev {
+                border-radius: 0 50% 50% 0;
+            }
 
-                & + li {
-                    margin-left: 0.5rem;
-                }
+            &.next {
+                border-radius: 50% 0 0 50%;
+            }
 
-                &:hover {
-                    cursor: pointer;
-                }
+            &.busy {
+                pointer-events: none;
+                opacity: 0.25;
+            }
 
-                &:hover,
-                &.current {
-                    background-color: rgba(#fff, 0.75);
-                }
-
-                &.current {
-                    padding: 0 1rem;
-                }
+            &:hover {
+                cursor: pointer;
+                background-color: #fff;
             }
         }
     }
@@ -137,7 +122,6 @@ $carousel-overlay-background-color: rgba(#000, 0.35);
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $carousel-overlay-background-color;
         color: #fff;
         font-size: 1.5em;
     }

@@ -20,7 +20,7 @@ namespace Modules.Client
                 {
                     x.SaveInDatabase();
                     x.GentleMessage("Saved successfully.");
-                    x.ReturnToPreviousPage();
+                    x.Go<Pages.Dashboard.Cms.ClientsPage>();
                 });
         }
     }

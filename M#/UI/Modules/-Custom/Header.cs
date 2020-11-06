@@ -12,10 +12,9 @@ namespace Modules.Custom
                 .Using("Olive.Security")
                 .RootCssClass("header-wrapper");
 
-            var logo = Image("Logo")
+            var logo = Link("Geeks")
                 .CssClass("logo")
-                .ImageUrl("~/img/Logo.png")
-                .OnClick(x => x.Go("~/"));
+                .OnClick(x => x.Go<Pages.HomePage>());
 
             var burger = Link("Burger")
                 .NoText()
@@ -27,6 +26,9 @@ namespace Modules.Custom
                 .Icon(FA.UnlockAlt)
                 .VisibleIf(AppRole.Anonymous)
                 .OnClick(x => x.Go<Pages.LoginPage>());
+
+            var backToLiveWebsite = Link("Live website")
+                 .OnClick(x => x.Go<Pages.HomePage>());
 
             var logout = Link("Logout")
                 .CssClass("align-bottom logout")
@@ -45,6 +47,7 @@ namespace Modules.Custom
                         {logo.Ref}
                     </div>
                     <div class=""header-account-wrapper"">
+                        {backToLiveWebsite.Ref}
                         {logout.Ref}
                     </div>
                 </nav>

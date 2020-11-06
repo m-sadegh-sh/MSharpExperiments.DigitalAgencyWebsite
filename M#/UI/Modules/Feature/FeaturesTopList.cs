@@ -6,11 +6,9 @@ namespace Modules.Feature
     {
         public FeaturesTopList()
         {
-            IsViewComponent();
-
-            WrapInForm(false);
-
-            RenderMode(ListRenderMode.List);
+            IsViewComponent()
+                .WrapInForm(false)
+                .RenderMode(ListRenderMode.List);
 
             Markup(@"
                 <h1>@item.Title</h1>

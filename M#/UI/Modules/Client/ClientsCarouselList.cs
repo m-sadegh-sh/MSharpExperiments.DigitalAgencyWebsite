@@ -4,20 +4,33 @@ namespace Modules.Client
 {
     public class ClientsCarouselList : ListModule<Domain.Client>
     {
-        /*M#:w[6]T-Prop:Markup-Type:ListModule-Hardcoding in-line style is forbidden. Set a Css class instead.*/public ClientsCarouselList()
+        public ClientsCarouselList()
         {
-            IsViewComponent();
-
-            WrapInForm(false);
-
-            RenderMode(ListRenderMode.List);
-
-            LoadJavascriptModule("scripts/components/ClientsCarouselModule.js")
-                .Event(UIModuleEvent.Load);
+            IsViewComponent()
+                .WrapInForm(false)
+                .RenderMode(ListRenderMode.List);
 
             Markup(@"
                 <div style='background-image: url(@item.Image);' class='image' title='@item.Name'></div>
             ");
+
+            Footer(@"
+                @if (Model.Items.Any()) {
+                    <div class='paging-icons'>
+                        <!--
+                            <button class='prev'>
+                                <i class='fa fa-arrow-left'></i>
+                            </button>
+                            <button class='next'>
+                                <i class='fa fa-arrow-right'></i>
+                            </button>
+                        -->
+                    </div>
+                }
+            ");
+
+            LoadJavascriptModule("scripts/components/ClientsCarouselModule.js")
+                .Event(UIModuleEvent.Load);
         }
     }
 }

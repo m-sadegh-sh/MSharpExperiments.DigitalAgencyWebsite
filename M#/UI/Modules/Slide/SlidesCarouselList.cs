@@ -4,7 +4,7 @@ namespace Modules.Slide
 {
     public class SlidesCarouselList : ListModule<Domain.Slide>
     {
-        public SlidesCarouselList()
+        /*M#:w[6]T-Prop:Markup-Type:ListModule-Do not use '<A>' directly in the code. Instead create a Button and reference it here using [#BUTTONS(ButtonName)#].*//*M#:w[6]T-Prop:Markup-Type:ListModule-Hardcoding in-line style is forbidden. Set a Css class instead.*/public SlidesCarouselList()
         {
             IsViewComponent()
                 .WrapInForm(false)
@@ -29,7 +29,7 @@ namespace Modules.Slide
 
             Footer(@"
                 @if (Model.Items.Any()) {
-                    <div class='paging-indicators'>
+                    <div class='paging-icons'>
                         <ul>
                             @for (var page = 0; page < Model.Items.Count; page++) {
                                 <li@(Html.Raw(page == 0 ? "" class='current'"" : """"))></li>
