@@ -13,9 +13,9 @@ namespace Pages
             Add<Modules.Slide.SlidesCarouselList>();
             Add<Modules.Feature.FeaturesTopList>();
             Add<Modules.Client.ClientsCarouselList>();
-            //Add<Modules.Slide.About>();
-            //Add<Modules.Slide.TestimonyLst>();
-            //Add<Modules.Slide.Contact>();
+            Add<Modules.Custom.About>();
+            Add<Modules.Testimony.TestimoniesCarouselList>();
+            Add<Modules.Custom.Contact>();
 
             Set(PageSettings.MainNav, "MainNav");
             Set(PageSettings.MainFooter, "Footer");

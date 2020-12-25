@@ -11,7 +11,7 @@ namespace Modules.Feature
             Field(x => x.Description);
 
             Button("Cancel")
-                .OnClick(x => x.ReturnToPreviousPage());
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.FeaturesPage>());
 
             Button("Save")
                 .IsDefault()

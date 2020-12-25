@@ -9,7 +9,7 @@ namespace Modules.User
             SupportsAdd(false)
                 .Using("Olive.Security")
                 .SupportsEdit(false)
-                .Header("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"LoginIntro\"}))")
+                .Header($"@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {{Key=\"{nameof(Domain.ContentBlock.LoginIntro)}\"}}))")
                 .HeaderText("Login")
                 .DataSource("await Domain.User.FindByEmail(info.Email)");
 

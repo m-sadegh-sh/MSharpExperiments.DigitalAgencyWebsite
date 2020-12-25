@@ -53,6 +53,18 @@ namespace Domain
                 Key = nameof(ContentBlock.DashboardGreeting),
                 Content = "<p>Welcome to your dashboard.<br/>You can manage your website with ease, just take a look at left side menu.</p>"
             });
+
+            await Create(new ContentBlock
+            {
+                Key = nameof(ContentBlock.HomeAbout),
+                Content = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare lectus sit. Venenatis a condimentum vitae sapien pellentesque habitant. Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Pretium viverra suspendisse potenti nullam ac. Sit amet nulla facilisi morbi. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Porttitor leo a diam sollicitudin tempor. Neque gravida in fermentum et sollicitudin ac orci phasellus. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. In eu mi bibendum neque egestas congue quisque egestas diam. Duis convallis convallis tellus id interdum velit. Sed turpis tincidunt id aliquet risus feugiat. Nisl pretium fusce id velit ut. Leo a diam sollicitudin tempor. Malesuada fames ac turpis egestas sed tempus urna et.</p>"
+            });
+
+            await Create(new ContentBlock
+            {
+                Key = nameof(ContentBlock.HomeContact),
+                Content = "<p>Contact...</p>"
+            });
         }
 
         async Task CreateClients()

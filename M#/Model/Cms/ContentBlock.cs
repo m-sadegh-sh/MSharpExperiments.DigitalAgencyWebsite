@@ -11,7 +11,9 @@ namespace Cms
             InstanceAccessors(
                 "PasswordSuccessfullyReset",
                 "LoginIntro",
-                "DashboardGreeting"
+                "DashboardGreeting",
+                "HomeAbout",
+                "HomeContact"
             );
 
             DefaultToString = String("Key")

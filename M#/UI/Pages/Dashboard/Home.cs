@@ -6,9 +6,7 @@ namespace Pages.Dashboard
     {
         public HomePage()
         {
-            MarkupTemplate("@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {Key=\"DashboardGreeting\"}))");
-
-            Add<Modules.ContentBlock.ContentBlockView>();
+            MarkupTemplate($"@(await Component.InvokeAsync<ContentBlockView>(new ViewModel.ContentBlockView {{Key=\"{nameof(Domain.ContentBlock.DashboardGreeting)}\"}}))");
         }
     }
 }

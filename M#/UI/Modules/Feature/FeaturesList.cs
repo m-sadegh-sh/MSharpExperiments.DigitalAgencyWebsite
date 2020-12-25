@@ -20,10 +20,10 @@ namespace Modules.Feature
                 .HeaderText("Actions")
                 .GridColumnCssClass("actions")
                 .Icon(FA.Edit)
-                /*M#:w[22]T-Prop:SendReturnUrl-Type:NavigateActivity-The destination page uses ReturnUrl which is not provided.*/.OnClick(x => x.Go<Pages.Dashboard.Cms.Features.EnterPage>().Send("item", "item.ID"));
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.Features.EnterPage>().Send("item", "item.ID"));
 
             Button("New Feature").Icon(FA.Plus)
-                /*M#:w[25]T-Prop:SendReturnUrl-Type:NavigateActivity-The destination page uses ReturnUrl which is not provided.*/.OnClick(x => x.Go<Pages.Dashboard.Cms.Features.EnterPage>());
+                .OnClick(x => x.Go<Pages.Dashboard.Cms.Features.EnterPage>());
         }
     }
 }
